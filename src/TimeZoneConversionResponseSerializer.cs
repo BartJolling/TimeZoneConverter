@@ -10,7 +10,6 @@ namespace TimeZoneConvertor
     public class TimeZoneConversionResponseSerializer : XmlObjectSerializer
     {
         private readonly XmlSerializer _serializer;
-
         private readonly XmlSerializerNamespaces namespaces;
 
         public TimeZoneConversionResponseSerializer()
@@ -97,7 +96,14 @@ namespace TimeZoneConvertor
             if (writer == null)
                 throw new ArgumentNullException(nameof(writer));
 
+            //using MemoryStream stream = new();
+            //writer = XmlDictionaryWriter.CreateTextWriter(stream, Encoding.UTF8, false /*ownsStream*/);
+
             _serializer.Serialize(writer, graph, namespaces);
+
+            //StreamReader reader = new(stream);
+            //stream.Seek(0, SeekOrigin.Begin);
+            //string actual = reader.ReadToEnd();
         }
     }
 }

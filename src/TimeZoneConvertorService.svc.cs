@@ -6,6 +6,7 @@ namespace TimeZoneConvertor
     // NOTE: In order to launch WCF Test Client for testing this service, please select TimeZoneConvertorService.svc or TimeZoneConvertorService.svc.cs at the Solution Explorer and start debugging.
     public class TimeZoneConvertorService : ITimeZoneConvertor
     {
+        [TimeZoneConversionResponseSerializer]
         public ConvertToOffsetResponse ConvertToOffset(ConvertToOffsetRequest request)
         {
             var conversionRequest = request.TimeZoneConversionRequest;
