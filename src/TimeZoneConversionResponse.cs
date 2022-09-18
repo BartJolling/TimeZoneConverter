@@ -1,22 +1,21 @@
 ﻿using System;
 
-namespace TimeZoneConvertor
-{
-    public partial class TimeZoneConversionResponse
-    {
-        private DateTimeOffset ToDateTimeOffsetField;
+namespace TimeZoneConverter;
 
-        public DateTimeOffset ToDateTimeOffset
+public partial class TimeZoneConversionResponse
+{
+    private DateTimeOffset ToDateTimeOffsetField;
+
+    public DateTimeOffset ToDateTimeOffset
+    {
+        get 
         {
-            get 
-            {
-                return ToDateTimeOffsetField;
-            }
-            set 
-            {
-                ToDateTimeOffsetField = value;
-                ToDateTimeField = value.UtcDateTime;
-            }
+            return ToDateTimeOffsetField;
+        }
+        set 
+        {
+            ToDateTimeOffsetField = value;
+            toDateTimeField = value.UtcDateTime;
         }
     }
 }

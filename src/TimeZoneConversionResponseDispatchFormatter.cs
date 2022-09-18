@@ -3,7 +3,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
 using System.Runtime.Serialization;
 
-namespace TimeZoneConvertor;
+namespace TimeZoneConverter;
 
 public class TimeZoneConversionResponseDispatchFormatter : IDispatchMessageFormatter
 {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="TimeZoneConverter"
+				  targetNamespace="http://bartjolling.github.io/"
+				  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				  xmlns:tns="http://bartjolling.github.io/"
+				  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://bartjolling.github.io/Imports">
+			<xsd:import schemaLocation="TimeZoneConverter.xsd" namespace="http://bartjolling.github.io/" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="ITimeZoneConverter_ConvertToOffset_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConvertToOffsetRequest"/>
+	</wsdl:message>
+
+	<wsdl:message name="ITimeZoneConverter_ConvertToOffset_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConvertToOffsetResponse"/>
+	</wsdl:message>
+
+	<wsdl:portType name="ITimeZoneConverter">
+		<wsdl:operation name="ConvertToOffset">
+			<wsdl:input wsaw:Action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetRequest" message="tns:ITimeZoneConverter_ConvertToOffset_InputMessage"/>
+			<wsdl:output wsaw:Action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetResponse" message="tns:ITimeZoneConverter_ConvertToOffset_OutputMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="BasicHttpBinding_ITimeZoneConverter" type="tns:ITimeZoneConverter">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ConvertToOffset">
+			<soap:operation soapAction="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffset" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="TimeZoneConverter">
+		<wsdl:port name="BasicHttpBinding_ITimeZoneConverter" binding="tns:BasicHttpBinding_ITimeZoneConverter">
+			<soap:address location="http://localhost:50367/TimeZoneConverter.svc"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

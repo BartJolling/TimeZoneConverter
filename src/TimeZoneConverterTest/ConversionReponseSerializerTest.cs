@@ -1,8 +1,8 @@
 using System.Text;
 using System.Xml;
-using TimeZoneConvertor;
+using TimeZoneConverter;
 
-namespace TimeZoneConvertorTest
+namespace TimeZoneConverterTest
 {
     [TestClass]
     public class ConversionReponseSerializerTest

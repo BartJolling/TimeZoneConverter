@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TimeZoneConvertor.csproj" />
+    <ProjectReference Include="..\TimeZoneConverter.csproj" />
   </ItemGroup>
 
 </Project>

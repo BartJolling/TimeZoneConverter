@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace TimeZoneConvertor
+namespace TimeZoneConverter
 {
     public class TimeZoneConversionResponseSerializer : XmlObjectSerializer
     {
