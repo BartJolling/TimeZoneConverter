@@ -60,7 +60,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TimeZoneConverter.csproj">
+    <ProjectReference Include="..\TimeZoneConverter\TimeZoneConverter.csproj">
       <Project>{831ab30a-be57-4625-8e39-067eafbc9d36}</Project>
       <Name>TimeZoneConverter</Name>
     </ProjectReference>
