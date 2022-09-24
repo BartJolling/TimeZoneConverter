@@ -27,7 +27,11 @@ namespace TimeZoneConverter
 
             // Use ToDateTimeOffset during serialization
             var toDateTimeOffsetAttributes = new XmlAttributes();
-            toDateTimeOffsetAttributes.XmlElements.Add(new XmlElementAttribute() { ElementName = "ToDateTime" });
+            toDateTimeOffsetAttributes.XmlElements.Add(new XmlElementAttribute() 
+            { 
+                ElementName = "ToDateTime",
+                Order = 0
+            });
 
             var attributeOverrides = new XmlAttributeOverrides();
 
@@ -96,14 +100,7 @@ namespace TimeZoneConverter
             if (writer == null)
                 throw new ArgumentNullException(nameof(writer));
 
-            //using MemoryStream stream = new();
-            //writer = XmlDictionaryWriter.CreateTextWriter(stream, Encoding.UTF8, false /*ownsStream*/);
-
-            _serializer.Serialize(writer, graph, namespaces);
-
-            //StreamReader reader = new(stream);
-            //stream.Seek(0, SeekOrigin.Begin);
-            //string actual = reader.ReadToEnd();
+            _serializer.Serialize(writer, graph, namespaces);            
         }
     }
 }

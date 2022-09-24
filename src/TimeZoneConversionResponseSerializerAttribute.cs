@@ -24,14 +24,15 @@ public class TimeZoneConversionResponseSerializerAttribute : Attribute, IOperati
 
     public void ApplyDispatchBehavior(OperationDescription operationDescription, DispatchOperation dispatchOperation)
     {
-        //InnerFormatterBehavior = operationDescription.Behaviors.Find<XmlSerializerOperationBehavior>();
-        InnerFormatterBehavior = operationDescription.Behaviors.Find<DataContractSerializerOperationBehavior>();
+        InnerFormatterBehavior = operationDescription.Behaviors.Find<XmlSerializerOperationBehavior>();
 
         if (InnerFormatterBehavior != null && dispatchOperation.Formatter == null)
         {
-            // no formatter has been applied yet
+            // no formatter has been applied yet - initialize the formatter on the default behavior
             InnerFormatterBehavior.ApplyDispatchBehavior(operationDescription, dispatchOperation);
         }
+
+        // Override the default formatter, but pass in the default formatter that was initialized above
         dispatchOperation.Formatter = new TimeZoneConversionResponseDispatchFormatter(dispatchOperation.Formatter);
     }
 

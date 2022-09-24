@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Xml.Serialization;
 
 namespace TimeZoneConverter;
 
@@ -6,16 +8,17 @@ public partial class TimeZoneConversionResponse
 {
     private DateTimeOffset ToDateTimeOffsetField;
 
-    public DateTimeOffset ToDateTimeOffset
+    [XmlElement(Order = 1)]
+    public string ToDateTimeOffset
     {
-        get 
+        get
         {
-            return ToDateTimeOffsetField;
+            return ToDateTimeOffsetField.ToString("o", CultureInfo.InvariantCulture);
         }
-        set 
+        set
         {
-            ToDateTimeOffsetField = value;
-            toDateTimeField = value.UtcDateTime;
+            ToDateTimeOffsetField = DateTimeOffset.ParseExact(value, "o", CultureInfo.InvariantCulture);
+            toDateTimeField = ToDateTimeOffsetField.UtcDateTime;
         }
     }
 }

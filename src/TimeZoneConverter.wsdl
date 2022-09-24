@@ -9,7 +9,7 @@
 				  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://bartjolling.github.io/Imports">
-			<xsd:import schemaLocation="TimeZoneConverter.xsd" namespace="http://bartjolling.github.io/" />
+			<xsd:import schemaLocation="./TimeZoneConverter.xsd" namespace="http://bartjolling.github.io/" />
 		</xsd:schema>
 	</wsdl:types>
 
@@ -43,7 +43,7 @@
 
 	<wsdl:service name="TimeZoneConverter">
 		<wsdl:port name="BasicHttpBinding_ITimeZoneConverter" binding="tns:BasicHttpBinding_ITimeZoneConverter">
-			<soap:address location="http://localhost:50367/TimeZoneConverter.svc"/>
+			<soap:address location="http://localhost:50355/TimeZoneConverter.svc"/>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
