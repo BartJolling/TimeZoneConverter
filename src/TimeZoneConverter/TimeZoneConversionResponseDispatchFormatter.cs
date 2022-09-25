@@ -2,6 +2,7 @@
 using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
 using System.Runtime.Serialization;
+using TimeZoneConverter.Contracts;
 
 namespace TimeZoneConverter;
 

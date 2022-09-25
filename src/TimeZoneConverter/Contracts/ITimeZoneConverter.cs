@@ -8,19 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeZoneConverter
+namespace TimeZoneConverter.Contracts
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://bartjolling.github.io/", ConfigurationName="TimeZoneConverter.ITimeZoneConverter")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://bartjolling.github.io/", ConfigurationName="TimeZoneConverter.Contracts.ITimeZoneConverter")]
     public interface ITimeZoneConverter
     {
         
         // CODEGEN: Generating message contract since the wrapper name (ConvertToOffsetRequest) of message ConvertToOffsetRequest does not match the default value (ConvertToOffset)
         [System.ServiceModel.OperationContractAttribute(Action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetRequest", ReplyAction="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        TimeZoneConverter.ConvertToOffsetResponse ConvertToOffset(TimeZoneConverter.ConvertToOffsetRequest request);
+        TimeZoneConverter.Contracts.ConvertToOffsetResponse ConvertToOffset(TimeZoneConverter.Contracts.ConvertToOffsetRequest request);
     }
     
     /// <remarks/>
@@ -115,13 +115,13 @@ namespace TimeZoneConverter
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bartjolling.github.io/", Order=0)]
-        public TimeZoneConverter.TimeZoneConversionRequest TimeZoneConversionRequest;
+        public TimeZoneConverter.Contracts.TimeZoneConversionRequest TimeZoneConversionRequest;
         
         public ConvertToOffsetRequest()
         {
         }
         
-        public ConvertToOffsetRequest(TimeZoneConverter.TimeZoneConversionRequest TimeZoneConversionRequest)
+        public ConvertToOffsetRequest(TimeZoneConverter.Contracts.TimeZoneConversionRequest TimeZoneConversionRequest)
         {
             this.TimeZoneConversionRequest = TimeZoneConversionRequest;
         }
@@ -135,26 +135,26 @@ namespace TimeZoneConverter
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bartjolling.github.io/", Order=0)]
-        public TimeZoneConverter.TimeZoneConversionResponse TimeZoneConversionResponse;
+        public TimeZoneConverter.Contracts.TimeZoneConversionResponse TimeZoneConversionResponse;
         
         public ConvertToOffsetResponse()
         {
         }
         
-        public ConvertToOffsetResponse(TimeZoneConverter.TimeZoneConversionResponse TimeZoneConversionResponse)
+        public ConvertToOffsetResponse(TimeZoneConverter.Contracts.TimeZoneConversionResponse TimeZoneConversionResponse)
         {
             this.TimeZoneConversionResponse = TimeZoneConversionResponse;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITimeZoneConverterChannel : TimeZoneConverter.ITimeZoneConverter, System.ServiceModel.IClientChannel
+    public interface ITimeZoneConverterChannel : TimeZoneConverter.Contracts.ITimeZoneConverter, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TimeZoneConverterClient : System.ServiceModel.ClientBase<TimeZoneConverter.ITimeZoneConverter>, TimeZoneConverter.ITimeZoneConverter
+    public partial class TimeZoneConverterClient : System.ServiceModel.ClientBase<TimeZoneConverter.Contracts.ITimeZoneConverter>, TimeZoneConverter.Contracts.ITimeZoneConverter
     {
         
         public TimeZoneConverterClient()
@@ -182,16 +182,16 @@ namespace TimeZoneConverter
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeZoneConverter.ConvertToOffsetResponse TimeZoneConverter.ITimeZoneConverter.ConvertToOffset(TimeZoneConverter.ConvertToOffsetRequest request)
+        TimeZoneConverter.Contracts.ConvertToOffsetResponse TimeZoneConverter.Contracts.ITimeZoneConverter.ConvertToOffset(TimeZoneConverter.Contracts.ConvertToOffsetRequest request)
         {
             return base.Channel.ConvertToOffset(request);
         }
         
-        public TimeZoneConverter.TimeZoneConversionResponse ConvertToOffset(TimeZoneConverter.TimeZoneConversionRequest TimeZoneConversionRequest)
+        public TimeZoneConverter.Contracts.TimeZoneConversionResponse ConvertToOffset(TimeZoneConverter.Contracts.TimeZoneConversionRequest TimeZoneConversionRequest)
         {
-            TimeZoneConverter.ConvertToOffsetRequest inValue = new TimeZoneConverter.ConvertToOffsetRequest();
+            TimeZoneConverter.Contracts.ConvertToOffsetRequest inValue = new TimeZoneConverter.Contracts.ConvertToOffsetRequest();
             inValue.TimeZoneConversionRequest = TimeZoneConversionRequest;
-            TimeZoneConverter.ConvertToOffsetResponse retVal = ((TimeZoneConverter.ITimeZoneConverter)(this)).ConvertToOffset(inValue);
+            TimeZoneConverter.Contracts.ConvertToOffsetResponse retVal = ((TimeZoneConverter.Contracts.ITimeZoneConverter)(this)).ConvertToOffset(inValue);
             return retVal.TimeZoneConversionResponse;
         }
     }

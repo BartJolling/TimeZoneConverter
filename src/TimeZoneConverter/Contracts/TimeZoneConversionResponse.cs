@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Xml.Serialization;
 
-namespace TimeZoneConverter;
+namespace TimeZoneConverter.Contracts;
 
 public partial class TimeZoneConversionResponse
 {

@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
 using TimeZoneConverter;
+using TimeZoneConverter.Contracts;
 
 namespace TimeZoneConverterTest
 {

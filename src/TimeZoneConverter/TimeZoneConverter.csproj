@@ -67,11 +67,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITimeZoneConverter.cs" />
+    <Compile Include="Contracts\ITimeZoneConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeZoneConversionResponse.cs" />
+    <Compile Include="Contracts\TimeZoneConversionResponse.cs" />
     <Compile Include="TimeZoneConversionResponseDispatchFormatter.cs" />
-    <Compile Include="TimeZoneConversionResponseSerializer.cs" />
+    <Compile Include="Serializers\TimeZoneConversionResponseSerializer.cs" />
     <Compile Include="TimeZoneConversionResponseSerializerAttribute.cs" />
     <Compile Include="TimeZoneConverter.svc.cs">
       <DependentUpon>TimeZoneConverter.svc</DependentUpon>
@@ -80,8 +80,8 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="GenerateContracts.ps1" />
-    <None Include="TimeZoneConverter.wsdl" />
-    <None Include="TimeZoneConverter.xsd">
+    <None Include="Contracts\TimeZoneConverter.wsdl" />
+    <None Include="Contracts\TimeZoneConverter.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">

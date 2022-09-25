@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using TimeZoneConverter.Contracts;
 
 namespace TimeZoneConverter
 {
