@@ -5,7 +5,7 @@ using System.ServiceModel.Dispatcher;
 
 namespace TimeZoneConverter;
 
-public class TimeZoneConversionResponseSerializerAttribute : Attribute, IOperationBehavior
+public class ConvertToOffsetResponseSerializerAttribute : Attribute, IOperationBehavior
 {
     private IOperationBehavior InnerFormatterBehavior { get; set; }
 
@@ -33,7 +33,7 @@ public class TimeZoneConversionResponseSerializerAttribute : Attribute, IOperati
         }
 
         // Override the default formatter, but pass in the default formatter that was initialized above
-        dispatchOperation.Formatter = new TimeZoneConversionResponseDispatchFormatter(dispatchOperation.Formatter);
+        dispatchOperation.Formatter = new ConvertToOffsetDispatchFormatter(dispatchOperation.Formatter);
     }
 
     public void Validate(OperationDescription operationDescription)

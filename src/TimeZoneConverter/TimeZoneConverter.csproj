@@ -70,9 +70,9 @@
     <Compile Include="Contracts\ITimeZoneConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Contracts\TimeZoneConversionResponse.cs" />
-    <Compile Include="TimeZoneConversionResponseDispatchFormatter.cs" />
-    <Compile Include="Serializers\TimeZoneConversionResponseSerializer.cs" />
-    <Compile Include="TimeZoneConversionResponseSerializerAttribute.cs" />
+    <Compile Include="Serializers\ConvertToOffsetResponseSerializer.cs" />
+    <Compile Include="ConvertToOffsetDispatchFormatter.cs" />
+    <Compile Include="ConvertToOffsetResponseSerializerAttribute.cs" />
     <Compile Include="TimeZoneConverter.svc.cs">
       <DependentUpon>TimeZoneConverter.svc</DependentUpon>
     </Compile>
