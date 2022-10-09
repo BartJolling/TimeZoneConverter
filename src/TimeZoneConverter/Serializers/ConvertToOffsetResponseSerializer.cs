@@ -42,11 +42,6 @@ public class ConvertToOffsetResponseSerializer : XmlObjectSerializer
         return attributeOverrides;
     }
 
-    public override bool IsStartObject(XmlDictionaryReader reader)
-    {
-        throw new NotImplementedException();
-    }
-
     public override object ReadObject(XmlDictionaryReader reader, bool verifyObjectName)
     {
         if (_serializer.Deserialize(reader) is not ConvertToOffsetResponse deserializedObject)
@@ -55,6 +50,21 @@ public class ConvertToOffsetResponseSerializer : XmlObjectSerializer
         }
 
         return deserializedObject;
+    }
+
+    public override void WriteObject(XmlDictionaryWriter writer, object graph)
+    {
+        if (writer == null)
+            throw new ArgumentNullException(nameof(writer));
+
+        _serializer.Serialize(writer, graph, namespaces);
+    }
+
+    #region Not Implemented
+
+    public override bool IsStartObject(XmlDictionaryReader reader)
+    {
+        throw new NotImplementedException();
     }
 
     public override void WriteEndObject(XmlDictionaryWriter writer)
@@ -72,11 +82,5 @@ public class ConvertToOffsetResponseSerializer : XmlObjectSerializer
         throw new NotImplementedException();
     }
 
-    public override void WriteObject(XmlDictionaryWriter writer, object graph)
-    {
-        if (writer == null)
-            throw new ArgumentNullException(nameof(writer));
-
-        _serializer.Serialize(writer, graph, namespaces);
-    }
+    #endregion
 }

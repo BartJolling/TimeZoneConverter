@@ -6,7 +6,7 @@ namespace TimeZoneConverter;
 
 public class TimeZoneConverterService : ITimeZoneConverter
 {
-    [ConvertToOffsetResponseSerializer]
+    [ResponseSerializer]
     public ConvertToOffsetResponse ConvertToOffset(ConvertToOffsetRequest request)
     {
         var conversionRequest = request.TimeZoneConversionRequest;
