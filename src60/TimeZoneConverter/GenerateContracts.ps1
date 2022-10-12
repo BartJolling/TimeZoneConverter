@@ -1,0 +1,2 @@
+﻿$svcUtilExe = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\SvcUtil.exe"
+& $svcUtilExe "./Contracts/TimeZoneConverter.wsdl" "./Contracts/TimeZoneConverter.xsd" /t:code /language:"C#" /ser:XmlSerializer /syncOnly /o:ITimeZoneConverter.cs /n:"*,TimeZoneConverter.Contracts" /d:"./Contracts"

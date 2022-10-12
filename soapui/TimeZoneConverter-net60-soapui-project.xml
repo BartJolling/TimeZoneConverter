@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="69b55aec-6b20-481a-977d-22c238796453" activeEnvironment="Default" name="TimeZoneConverter.net60" resourceRoot="${projectDir}" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="84064180-9b72-48a1-910f-526bddaf994e" wsaVersion="NONE" name="BasicHttpBinding_ITimeZoneConverter_https" type="wsdl" bindingName="{http://bartjolling.github.io/}BasicHttpBinding_ITimeZoneConverter1" soapVersion="1_1" anonymous="optional" definition="https://localhost:8443/TimeZoneConverter?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://localhost:8443/TimeZoneConverter/basichttp</con:endpoint></con:endpoints><con:operation id="cb5fdf50-6350-4a37-9af3-12567e7f9b95" isOneWay="false" action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetRequest" name="ConvertToOffset" bindingOperationName="ConvertToOffset" type="Request-Response" outputName="ConvertToOffsetResponse" inputName="ConvertToOffsetRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="67b99d1b-7ea3-4953-af4a-a7d4ccb9d886" name="ConvertToHigherOffset"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8443/TimeZoneConverter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bar="http://bartjolling.github.io/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bar:ConvertToOffsetRequest>\r
+         <!--Optional:-->\r
+         <bar:TimeZoneConversionRequest>\r
+            <bar:FromDateTime>2022-09-24T10:23:45.678</bar:FromDateTime>
+            <bar:FromOffset>120</bar:FromOffset>
+            <bar:ToOffset>420</bar:ToOffset>
+         </bar:TimeZoneConversionRequest>\r
+      </bar:ConvertToOffsetRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="35fee458-9952-4c01-a65a-4dd901c834a0" wsaVersion="NONE" name="BasicHttpBinding_ITimeZoneConverter_http" type="wsdl" bindingName="{http://bartjolling.github.io/}BasicHttpBinding_ITimeZoneConverter" soapVersion="1_1" anonymous="optional" definition="https://localhost:8443/TimeZoneConverter?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost/TimeZoneConverter/basichttp</con:endpoint></con:endpoints><con:operation id="8415abd7-491d-49a8-8e96-d144f47e23b8" isOneWay="false" action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetRequest" name="ConvertToOffset" bindingOperationName="ConvertToOffset" type="Request-Response" outputName="ConvertToOffsetResponse" inputName="ConvertToOffsetRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="22fa701d-7f54-439f-a3b2-b9d304400d7b" name="ConvertToHigherOffset"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/TimeZoneConverter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bar="http://bartjolling.github.io/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bar:ConvertToOffsetRequest>\r
+         <!--Optional:-->\r
+         <bar:TimeZoneConversionRequest>\r
+            <bar:FromDateTime>2022-09-24T10:23:45.678</bar:FromDateTime>
+            <bar:FromOffset>120</bar:FromOffset>
+            <bar:ToOffset>420</bar:ToOffset>
+         </bar:TimeZoneConversionRequest>\r
+      </bar:ConvertToOffsetRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bartjolling.github.io/ITimeZoneConverter/ConvertToOffsetRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
