@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeZoneConverter", "TimeZo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeZoneConverterTest", "TimeZoneConverterTest\TimeZoneConverterTest.csproj", "{8BD39195-44F4-41FB-B813-02E404ECDFBE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contracts", "contracts", "{8781C519-9C4D-48B9-BE7F-D006720D8DF3}"
+	ProjectSection(SolutionItems) = preProject
+		..\contracts\TimeZoneConverter.wsdl = ..\contracts\TimeZoneConverter.wsdl
+		..\contracts\TimeZoneConverter.xsd = ..\contracts\TimeZoneConverter.xsd
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
