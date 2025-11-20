@@ -32,6 +32,8 @@ public class ResponseSerializerAttribute : Attribute, IOperationBehavior
             XmlSerializerBehavior.ApplyDispatchBehavior(operationDescription, dispatchOperation);
         }
 
+        if (dispatchOperation.Formatter is null) throw new InvalidOperationException("No default formatter was provided");
+
         // Override the default formatter, but pass in the default formatter that was initialized above so both can be used
         dispatchOperation.Formatter = new ResponseDispatchFormatter(dispatchOperation.Formatter);
     }
