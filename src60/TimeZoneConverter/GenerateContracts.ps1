@@ -1,2 +1,10 @@
-﻿$svcUtilExe = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\SvcUtil.exe"
-& $svcUtilExe "./../../Contracts/TimeZoneConverter.wsdl" "./../../Contracts/TimeZoneConverter.xsd" /t:code /language:"C#" /ser:XmlSerializer /syncOnly /o:ITimeZoneConverter.cs /n:"*,TimeZoneConverter.Contracts" /d:"./Contracts" /config:"service.config"
+﻿$env:DOTNET_SVCUTIL_TELEMETRY_OPTOUT = "1"
+
+Remove-Item ./Contracts/ITimeZoneConverter.cs -Force -ErrorAction SilentlyContinue
+
+dotnet tool run dotnet-svcutil ./../../Contracts/TimeZoneConverter.wsdl ./../../Contracts/TimeZoneConverter.xsd `
+  --serializer XmlSerializer `
+  --outputDir ./Contracts `
+  --outputFile ITimeZoneConverter.cs `
+  --namespace "*,TimeZoneConverter.Contracts" `
+  --targetFramework net9.0
