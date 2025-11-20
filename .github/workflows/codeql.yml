@@ -31,10 +31,6 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-    # Replace autobuild with explicit build
-    #- name: Build only .NET 6 solution
-    #  run: dotnet build src60/TimeZoneConverter.sln --configuration Release
-
     # autobuild on Windows because of dotnet fwk 4.8 solution
     - name: Autobuild
       uses: github/codeql-action/autobuild@v4
